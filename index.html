@@ -1,489 +1,422 @@
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Portfolio - Crosshair + Logo Loop + Staggered Menu</title>  <link rel="stylesheet" href="style.css">
+</head><body>  <!-- =========================================
+       SECTION 1 — CROSSHAIR + STAGGERED MENU
+  ========================================== -->  <section class="crosshair-container"><!-- STAGGERED MENU -->
 
-  <title>Portfolio - Crosshair + Logo Loop</title>
+<div class="staggered-menu">
 
-  <link rel="stylesheet" href="style.css">
-</head>
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    aria-label="Open menu"
+    aria-expanded="false"
+  >
 
-<body>
+    <span class="menu-toggle-text">MENU</span>
+
+    <span class="menu-icon">
+      <span></span>
+      <span></span>
+    </span>
+
+  </button>
 
 
-  <!-- =========================================
-       SECTION 1 — CROSSHAIR
-  ========================================== -->
+  <div class="menu-overlay" id="menuOverlay">
 
-  <section class="crosshair-container">
+    <div class="menu-panel">
 
-    <div class="crosshair-content">
+      <div class="menu-header">
+        <span>PRAVEEN CHARLES</span>
+        <span>PORTFOLIO</span>
+      </div>
 
-      <p>MOVE YOUR MOUSE</p>
 
-      <h1>
-        CREATIVE<br>
-        DEVELOPER
-      </h1>
+      <nav class="menu-links">
 
-      <a href="#logo-loop">
-        View More
+        <a href="#home" class="menu-link">
+          <span class="menu-number">01</span>
+          <span class="menu-label">HOME</span>
+        </a>
+
+        <a href="#logo-loop" class="menu-link">
+          <span class="menu-number">02</span>
+          <span class="menu-label">SKILLS</span>
+        </a>
+
+        <a href="#projects" class="menu-link">
+          <span class="menu-number">03</span>
+          <span class="menu-label">PROJECTS</span>
+        </a>
+
+        <a href="#contact" class="menu-link">
+          <span class="menu-number">04</span>
+          <span class="menu-label">CONTACT</span>
+        </a>
+
+      </nav>
+
+
+      <div class="menu-footer">
+        <span>FULL STACK DEVELOPER</span>
+
+        <a
+          href="https://github.com/Praveencharles"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GITHUB ↗
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- HERO CONTENT -->
+
+<div
+  class="crosshair-content"
+  id="home"
+>
+
+  <p>MOVE YOUR MOUSE</p>
+
+  <h1>
+    CREATIVE<br>
+    DEVELOPER
+  </h1>
+
+  <a href="#logo-loop">
+    View More
+  </a>
+
+</div>
+
+
+<!-- CROSSHAIR -->
+
+<div class="cursor">
+
+  <svg>
+
+    <defs>
+
+      <filter id="filter-noise-x">
+
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.000001"
+          numOctaves="1"
+          id="filterX">
+        </feTurbulence>
+
+        <feDisplacementMap
+          in="SourceGraphic"
+          scale="40">
+        </feDisplacementMap>
+
+      </filter>
+
+
+      <filter id="filter-noise-y">
+
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.000001"
+          numOctaves="1"
+          id="filterY">
+        </feTurbulence>
+
+        <feDisplacementMap
+          in="SourceGraphic"
+          scale="40">
+        </feDisplacementMap>
+
+      </filter>
+
+    </defs>
+
+  </svg>
+
+
+  <div class="line-horizontal"></div>
+
+  <div class="line-vertical"></div>
+
+</div>
+
+  </section>  <!-- =========================================
+       SECTION 2 — LOGO LOOP
+  ========================================== -->  <section
+    id="logo-loop"
+    class="logo-loop-section"
+  ><div class="logo-loop-heading">
+
+  <p>MY TECHNOLOGY STACK</p>
+
+  <h2>
+    BUILT WITH<br>
+    MODERN TECHNOLOGIES
+  </h2>
+
+</div>
+
+
+<div
+  class="logo-loop"
+  id="logoLoop"
+  aria-label="Technology stack"
+>
+
+  <div class="logo-loop-track">
+
+
+    <!-- COPY 1 -->
+
+    <div class="logo-list">
+
+      <a
+        class="logo-item"
+        href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+          alt="HTML5"
+        >
+        <span>HTML5</span>
+      </a>
+
+
+      <a
+        class="logo-item"
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+          alt="CSS3"
+        >
+        <span>CSS3</span>
+      </a>
+
+
+      <a
+        class="logo-item"
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+          alt="JavaScript"
+        >
+        <span>JavaScript</span>
+      </a>
+
+
+      <a
+        class="logo-item"
+        href="https://react.dev/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+          alt="React"
+        >
+        <span>React</span>
+      </a>
+
+
+      <a
+        class="logo-item"
+        href="https://gsap.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div class="gsap-logo">GSAP</div>
+        <span>GSAP</span>
+      </a>
+
+
+      <a
+        class="logo-item"
+        href="https://www.djangoproject.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg"
+          alt="Django"
+        >
+        <span>Django</span>
+      </a>
+
+
+      <a
+        class="logo-item"
+        href="https://www.python.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+          alt="Python"
+        >
+        <span>Python</span>
+      </a>
+
+
+      <a
+        class="logo-item"
+        href="https://www.postgresql.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+          alt="PostgreSQL"
+        >
+        <span>PostgreSQL</span>
+      </a>
+
+
+      <a
+        class="logo-item"
+        href="https://git-scm.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+          alt="Git"
+        >
+        <span>Git</span>
+      </a>
+
+
+      <a
+        class="logo-item"
+        href="https://github.com/Praveencharles"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          class="github-logo"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+          alt="GitHub"
+        >
+        <span>GitHub</span>
       </a>
 
     </div>
 
 
-    <!-- Crosshair -->
-
-    <div class="cursor">
-
-      <svg>
-
-        <defs>
-
-          <filter id="filter-noise-x">
-
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.000001"
-              numOctaves="1"
-              id="filterX">
-            </feTurbulence>
-
-            <feDisplacementMap
-              in="SourceGraphic"
-              scale="40">
-            </feDisplacementMap>
-
-          </filter>
-
-
-          <filter id="filter-noise-y">
-
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.000001"
-              numOctaves="1"
-              id="filterY">
-            </feTurbulence>
-
-            <feDisplacementMap
-              in="SourceGraphic"
-              scale="40">
-            </feDisplacementMap>
-
-          </filter>
-
-        </defs>
-
-      </svg>
-
-
-      <div class="line-horizontal"></div>
-
-      <div class="line-vertical"></div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================================
-       SECTION 2 — LOGO LOOP
-  ========================================== -->
-
-  <section
-    id="logo-loop"
-    class="logo-loop-section"
-  >
-
-    <div class="logo-loop-heading">
-
-      <p>MY TECHNOLOGY STACK</p>
-
-      <h2>
-        BUILT WITH<br>
-        MODERN TECHNOLOGIES
-      </h2>
-
-    </div>
-
-
-    <!-- Logo Loop -->
+    <!-- COPY 2 -->
 
     <div
-      class="logo-loop"
-      id="logoLoop"
-      aria-label="Technology stack"
+      class="logo-list"
+      aria-hidden="true"
     >
 
-      <div class="logo-loop-track">
-
-
-        <!-- COPY 1 -->
-
-        <div class="logo-list">
-
-
-          <!-- HTML -->
-
-          <a
-            class="logo-item"
-            href="https://developer.mozilla.org/en-US/docs/Web/HTML"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-              alt="HTML5"
-            >
-
-            <span>HTML5</span>
-
-          </a>
-
-
-          <!-- CSS -->
-
-          <a
-            class="logo-item"
-            href="https://developer.mozilla.org/en-US/docs/Web/CSS"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-              alt="CSS3"
-            >
-
-            <span>CSS3</span>
-
-          </a>
-
-
-          <!-- JavaScript -->
-
-          <a
-            class="logo-item"
-            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-              alt="JavaScript"
-            >
-
-            <span>JavaScript</span>
-
-          </a>
-
-
-          <!-- React -->
-
-          <a
-            class="logo-item"
-            href="https://react.dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-              alt="React"
-            >
-
-            <span>React</span>
-
-          </a>
-
-
-          <!-- GSAP -->
-
-          <a
-            class="logo-item"
-            href="https://gsap.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            <div class="gsap-logo">
-              GSAP
-            </div>
-
-            <span>GSAP</span>
-
-          </a>
-
-
-          <!-- Django -->
-
-          <a
-            class="logo-item"
-            href="https://www.djangoproject.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg"
-              alt="Django"
-            >
-
-            <span>Django</span>
-
-          </a>
-
-
-          <!-- Python -->
-
-          <a
-            class="logo-item"
-            href="https://www.python.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-              alt="Python"
-            >
-
-            <span>Python</span>
-
-          </a>
-
-
-          <!-- PostgreSQL -->
-
-          <a
-            class="logo-item"
-            href="https://www.postgresql.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
-              alt="PostgreSQL"
-            >
-
-            <span>PostgreSQL</span>
-
-          </a>
-
-
-          <!-- Git -->
-
-          <a
-            class="logo-item"
-            href="https://git-scm.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-              alt="Git"
-            >
-
-            <span>Git</span>
-
-          </a>
-
-
-          <!-- GitHub -->
-
-          <a
-            class="logo-item"
-            href="https://github.com/Praveencharles"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            <img
-              class="github-logo"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-              alt="GitHub"
-            >
-
-            <span>GitHub</span>
-
-          </a>
-
-
-        </div>
-
-
-
-        <!-- COPY 2
-             Duplicate for seamless loop
-        -->
-
-        <div
-          class="logo-list"
-          aria-hidden="true"
+      <a class="logo-item" href="#">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+          alt=""
         >
+        <span>HTML5</span>
+      </a>
 
+      <a class="logo-item" href="#">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+          alt=""
+        >
+        <span>CSS3</span>
+      </a>
 
-          <a class="logo-item" href="#">
+      <a class="logo-item" href="#">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+          alt=""
+        >
+        <span>JavaScript</span>
+      </a>
 
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-              alt=""
-            >
+      <a class="logo-item" href="#">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+          alt=""
+        >
+        <span>React</span>
+      </a>
 
-            <span>HTML5</span>
+      <a class="logo-item" href="#">
+        <div class="gsap-logo">GSAP</div>
+        <span>GSAP</span>
+      </a>
 
-          </a>
+      <a class="logo-item" href="#">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg"
+          alt=""
+        >
+        <span>Django</span>
+      </a>
 
+      <a class="logo-item" href="#">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+          alt=""
+        >
+        <span>Python</span>
+      </a>
 
-          <a class="logo-item" href="#">
+      <a class="logo-item" href="#">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+          alt=""
+        >
+        <span>PostgreSQL</span>
+      </a>
 
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-              alt=""
-            >
+      <a class="logo-item" href="#">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+          alt=""
+        >
+        <span>Git</span>
+      </a>
 
-            <span>CSS3</span>
-
-          </a>
-
-
-          <a class="logo-item" href="#">
-
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-              alt=""
-            >
-
-            <span>JavaScript</span>
-
-          </a>
-
-
-          <a class="logo-item" href="#">
-
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-              alt=""
-            >
-
-            <span>React</span>
-
-          </a>
-
-
-          <a class="logo-item" href="#">
-
-            <div class="gsap-logo">
-              GSAP
-            </div>
-
-            <span>GSAP</span>
-
-          </a>
-
-
-          <a class="logo-item" href="#">
-
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg"
-              alt=""
-            >
-
-            <span>Django</span>
-
-          </a>
-
-
-          <a class="logo-item" href="#">
-
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-              alt=""
-            >
-
-            <span>Python</span>
-
-          </a>
-
-
-          <a class="logo-item" href="#">
-
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
-              alt=""
-            >
-
-            <span>PostgreSQL</span>
-
-          </a>
-
-
-          <a class="logo-item" href="#">
-
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-              alt=""
-            >
-
-            <span>Git</span>
-
-          </a>
-
-
-          <a class="logo-item" href="#">
-
-            <img
-              class="github-logo"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-              alt=""
-            >
-
-            <span>GitHub</span>
-
-          </a>
-
-
-        </div>
-
-      </div>
+      <a class="logo-item" href="#">
+        <img
+          class="github-logo"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+          alt=""
+        >
+        <span>GitHub</span>
+      </a>
 
     </div>
 
+  </div>
 
-    <p class="logo-loop-description">
-      HTML • CSS • JAVASCRIPT • REACT • GSAP • DJANGO • PYTHON • POSTGRESQL
-    </p>
-
-  </section>
+</div>
 
 
+<p class="logo-loop-description">
+  HTML • CSS • JAVASCRIPT • REACT • GSAP • DJANGO • PYTHON • POSTGRESQL
+</p>
 
-  <!-- =========================================
+  </section>  <!-- =========================================
        GSAP
-  ========================================== -->
-
-  <script
-    src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js">
-  </script>
-
-
-  <!-- =========================================
-       MAIN JS
-  ========================================== -->
-
-  <script src="script.js"></script>
-
-</body>
-
-</html>
-
+  ========================================== -->  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>  <script src="script.js"></script></body></html>
