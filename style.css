@@ -1,1003 +1,875 @@
 /* =========================================
-RESET
+   RESET
 ========================================= */
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 html {
-scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-width: 100%;
-background: #ffffff;
-color: #111111;
-font-family: Arial, Helvetica, sans-serif;
-overflow-x: hidden;
+    width: 100%;
+    background: #ffffff;
+    color: #111111;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
 }
 
+
 /* =========================================
-SECTION 1 — CROSSHAIR
+   SECTION 1 — CROSSHAIR
 ========================================= */
 
 .crosshair-container {
-
-position: relative;
-
-width: 100%;
-
-height: 100vh;
-
-overflow: hidden;
-
-background: #ffffff;
-
-cursor: none;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #ffffff;
+    cursor: none;
 }
 
 .crosshair-content {
+    position: relative;
+    z-index: 2;
 
-position: relative;
+    width: 100%;
+    height: 100%;
 
-z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-width: 100%;
-
-height: 100%;
-
-display: flex;
-
-flex-direction: column;
-
-align-items: center;
-
-justify-content: center;
-
-text-align: center;
+    text-align: center;
 }
 
 .crosshair-content p {
-
-font-size: 12px;
-
-letter-spacing: 5px;
-
-margin-bottom: 25px;
+    font-size: 12px;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
 }
 
 .crosshair-content h1 {
-
-font-size: clamp(50px, 10vw, 150px);
-
-line-height: 0.85;
-
-letter-spacing: -7px;
-
-font-weight: 700;
+    font-size: clamp(50px, 10vw, 150px);
+    line-height: 0.85;
+    letter-spacing: -7px;
+    font-weight: 700;
 }
 
 .crosshair-content a {
+    margin-top: 45px;
+    padding: 14px 30px;
 
-margin-top: 45px;
+    color: #111111;
+    text-decoration: none;
 
-padding: 14px 30px;
+    border: 1px solid #111111;
 
-color: #111111;
-
-text-decoration: none;
-
-border: 1px solid #111111;
-
-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .crosshair-content a:hover {
-
-background: #111111;
-
-color: #ffffff;
+    background: #111111;
+    color: #ffffff;
 }
 
+
 /* =========================================
-CROSSHAIR
+   CROSSHAIR
 ========================================= */
 
 .cursor {
+    position: absolute;
+    inset: 0;
 
-position: absolute;
+    width: 100%;
+    height: 100%;
 
-top: 0;
-left: 0;
-
-width: 100%;
-height: 100%;
-
-pointer-events: none;
-
-z-index: 10000;
+    pointer-events: none;
+    z-index: 10000;
 }
 
 .cursor svg {
+    position: absolute;
+    inset: 0;
 
-position: absolute;
+    width: 100%;
+    height: 100%;
 
-top: 0;
-left: 0;
-
-width: 100%;
-height: 100%;
+    pointer-events: none;
 }
+
+
+/* Horizontal line */
 
 .line-horizontal {
+    position: absolute;
 
-position: absolute;
+    width: 100%;
+    height: 1px;
 
-width: 100%;
+    left: 0;
+    top: 0;
 
-height: 1px;
+    background: #7c3aed;
 
-top: 0;
-left: 0;
+    pointer-events: none;
 
-background: #7c3aed;
+    opacity: 0;
 
-pointer-events: none;
-
-transform: translateY(50%);
-
-opacity: 0;
+    /* IMPORTANT:
+       Do not use translateY(50%) here.
+       GSAP controls the Y position.
+    */
 }
+
+
+/* Vertical line */
 
 .line-vertical {
+    position: absolute;
 
-position: absolute;
+    width: 1px;
+    height: 100%;
 
-width: 1px;
+    left: 0;
+    top: 0;
 
-height: 100%;
+    background: #7c3aed;
 
-top: 0;
-left: 0;
+    pointer-events: none;
 
-background: #7c3aed;
+    opacity: 0;
 
-pointer-events: none;
-
-transform: translateX(50%);
-
-opacity: 0;
+    /* IMPORTANT:
+       Do not use translateX(50%) here.
+       GSAP controls the X position.
+    */
 }
 
+
 /* =========================================
-STAGGERED MENU
+   STAGGERED MENU
 ========================================= */
 
 .staggered-menu {
+    position: absolute;
 
-position: absolute;
+    top: 25px;
+    right: 25px;
 
-top: 25px;
+    z-index: 20000;
 
-right: 25px;
-
-z-index: 20000;
-
-cursor: auto;
+    cursor: auto;
 }
 
+
 /* =========================================
-MENU BUTTON
+   MENU BUTTON
 ========================================= */
 
 .menu-toggle {
+    position: relative;
 
-position: relative;
+    z-index: 20002;
 
-z-index: 20002;
+    height: 48px;
 
-height: 48px;
+    padding: 0 18px;
 
-padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-display: flex;
+    gap: 14px;
 
-align-items: center;
+    background: #ffffff;
+    color: #111111;
 
-justify-content: center;
+    border: 1px solid #111111;
 
-gap: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
 
-background: #ffffff;
+    letter-spacing: 3px;
 
-color: #111111;
+    cursor: pointer;
 
-border: 1px solid #111111;
-
-font-family: Arial, Helvetica, sans-serif;
-
-font-size: 11px;
-
-font-weight: 600;
-
-letter-spacing: 3px;
-
-cursor: pointer;
-
-transition:
-background 0.3s ease,
-color 0.3s ease;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
 .menu-toggle:hover {
-
-background: #111111;
-
-color: #ffffff;
+    background: #111111;
+    color: #ffffff;
 }
 
 .menu-toggle-text {
-
-display: block;
+    display: block;
 }
 
+
 /* =========================================
-HAMBURGER ICON
+   HAMBURGER
 ========================================= */
 
 .menu-icon {
+    width: 20px;
+    height: 14px;
 
-width: 20px;
-
-height: 14px;
-
-display: flex;
-
-flex-direction: column;
-
-justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .menu-icon span {
+    display: block;
 
-display: block;
+    width: 100%;
+    height: 1px;
 
-width: 100%;
+    background: currentColor;
 
-height: 1px;
+    transform-origin: center;
 
-background: currentColor;
-
-transform-origin: center;
-
-transition:
-transform 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
+
 /* =========================================
-MENU OVERLAY
+   MENU OVERLAY
 ========================================= */
 
 .menu-overlay {
+    position: fixed;
+    inset: 0;
 
-position: fixed;
+    width: 100%;
+    height: 100vh;
 
-inset: 0;
+    background: rgba(255, 255, 255, 0.96);
 
-width: 100%;
+    opacity: 0;
+    visibility: hidden;
 
-height: 100vh;
+    pointer-events: none;
 
-background: rgba(255, 255, 255, 0.96);
-
-opacity: 0;
-
-visibility: hidden;
-
-pointer-events: none;
-
-z-index: 20000;
+    z-index: 20000;
 }
 
+
 /* =========================================
-MENU PANEL
+   MENU PANEL
 ========================================= */
 
 .menu-panel {
+    position: absolute;
 
-position: absolute;
+    top: 0;
+    right: 0;
 
-top: 0;
+    width: min(600px, 100%);
+    height: 100%;
 
-right: 0;
+    padding: 110px 60px 40px;
 
-width: min(600px, 100%);
+    background: #111111;
+    color: #ffffff;
 
-height: 100%;
+    transform: translateX(100%);
 
-padding: 110px 60px 40px;
-
-background: #111111;
-
-color: #ffffff;
-
-transform: translateX(100%);
-
-overflow: hidden;
+    overflow: hidden;
 }
 
+
 /* =========================================
-MENU HEADER
+   MENU HEADER
 ========================================= */
 
 .menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-display: flex;
+    padding-bottom: 25px;
 
-align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 
-justify-content: space-between;
+    font-size: 10px;
+    letter-spacing: 3px;
 
-padding-bottom: 25px;
-
-border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-
-font-size: 10px;
-
-letter-spacing: 3px;
-
-color: #999999;
+    color: #999999;
 }
 
+
 /* =========================================
-MENU LINKS
+   MENU LINKS
 ========================================= */
 
 .menu-links {
+    display: flex;
+    flex-direction: column;
 
-display: flex;
-
-flex-direction: column;
-
-margin-top: 55px;
+    margin-top: 55px;
 }
 
 .menu-link {
+    position: relative;
 
-position: relative;
+    display: flex;
+    align-items: baseline;
 
-display: flex;
+    gap: 25px;
 
-align-items: baseline;
+    padding: 18px 0;
 
-gap: 25px;
+    color: #ffffff;
 
-padding: 18px 0;
+    text-decoration: none;
 
-color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
-text-decoration: none;
+    overflow: hidden;
 
-border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-
-overflow: hidden;
-
-cursor: pointer;
+    cursor: pointer;
 }
 
 .menu-number {
+    flex-shrink: 0;
 
-flex-shrink: 0;
+    width: 35px;
 
-width: 35px;
+    font-size: 11px;
+    letter-spacing: 1px;
 
-font-size: 11px;
-
-letter-spacing: 1px;
-
-color: #777777;
+    color: #777777;
 }
 
 .menu-label {
+    display: block;
 
-display: block;
+    font-size: clamp(35px, 6vw, 70px);
 
-font-size: clamp(35px, 6vw, 70px);
+    line-height: 0.9;
 
-line-height: 0.9;
+    font-weight: 800;
 
-font-weight: 800;
+    letter-spacing: -3px;
 
-letter-spacing: -3px;
+    opacity: 0;
 
-opacity: 0;
-
-transform: translateY(110%);
+    transform: translateY(110%);
 }
 
+
 /* =========================================
-MENU LINK HOVER LINE
+   MENU HOVER LINE
 ========================================= */
 
 .menu-link::after {
+    content: "";
 
-content: "";
+    position: absolute;
 
-position: absolute;
+    left: 60px;
+    bottom: 0;
 
-left: 60px;
+    width: 0;
+    height: 2px;
 
-bottom: 0;
+    background: #7c3aed;
 
-width: 0;
-
-height: 2px;
-
-background: #7c3aed;
-
-transition: width 0.4s ease;
+    transition: width 0.4s ease;
 }
 
 .menu-link:hover::after {
-
-width: calc(100% - 60px);
+    width: calc(100% - 60px);
 }
 
 .menu-link:hover .menu-label {
-
-color: #a78bfa;
+    color: #a78bfa;
 }
 
+
 /* =========================================
-MENU FOOTER
+   MENU FOOTER
 ========================================= */
 
 .menu-footer {
+    position: absolute;
 
-position: absolute;
+    left: 60px;
+    right: 60px;
+    bottom: 35px;
 
-left: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-right: 60px;
+    font-size: 10px;
+    letter-spacing: 2px;
 
-bottom: 35px;
-
-display: flex;
-
-align-items: center;
-
-justify-content: space-between;
-
-font-size: 10px;
-
-letter-spacing: 2px;
-
-color: #777777;
+    color: #777777;
 }
 
 .menu-footer a {
+    color: #ffffff;
 
-color: #ffffff;
+    text-decoration: none;
 
-text-decoration: none;
-
-transition: color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .menu-footer a:hover {
-
-color: #a78bfa;
+    color: #a78bfa;
 }
 
+
 /* =========================================
-MENU OPEN STATE
+   MENU OPEN STATE
 ========================================= */
 
 .menu-open {
-
-overflow: hidden;
+    overflow: hidden;
 }
 
 .menu-open .menu-overlay {
-
-visibility: visible;
-
-pointer-events: auto;
-
-opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
 }
 
 .menu-open .menu-toggle {
-
-background: #111111;
-
-color: #ffffff;
+    background: #111111;
+    color: #ffffff;
 }
 
 .menu-open .menu-icon span:first-child {
-
-transform: translateY(6.5px) rotate(45deg);
+    transform: translateY(6.5px) rotate(45deg);
 }
 
 .menu-open .menu-icon span:last-child {
-
-transform: translateY(-6.5px) rotate(-45deg);
+    transform: translateY(-6.5px) rotate(-45deg);
 }
 
+
 /* =========================================
-SECTION 2 — LOGO LOOP
+   SECTION 2 — LOGO LOOP
 ========================================= */
 
 .logo-loop-section {
+    position: relative;
 
-position: relative;
+    width: 100%;
+    min-height: 80vh;
 
-width: 100%;
+    overflow: hidden;
 
-min-height: 80vh;
+    background: #ffffff;
 
-overflow: hidden;
+    display: flex;
+    flex-direction: column;
 
-background: #ffffff;
+    justify-content: center;
+    align-items: center;
 
-display: flex;
-
-flex-direction: column;
-
-justify-content: center;
-
-align-items: center;
-
-gap: 55px;
+    gap: 55px;
 }
 
+
 /* =========================================
-LOGO LOOP HEADING
+   LOGO LOOP HEADING
 ========================================= */
 
 .logo-loop-heading {
+    width: 100%;
 
-width: 100%;
+    text-align: center;
 
-text-align: center;
-
-pointer-events: none;
+    pointer-events: none;
 }
 
 .logo-loop-heading p {
+    font-size: 12px;
 
-font-size: 12px;
+    letter-spacing: 6px;
 
-letter-spacing: 6px;
+    margin-bottom: 25px;
 
-margin-bottom: 25px;
+    color: #7c3aed;
 
-color: #7c3aed;
-
-font-weight: 600;
+    font-weight: 600;
 }
 
 .logo-loop-heading h2 {
+    font-size: clamp(42px, 7vw, 100px);
 
-font-size: clamp(42px, 7vw, 100px);
+    line-height: 0.9;
 
-line-height: 0.9;
+    letter-spacing: -5px;
 
-letter-spacing: -5px;
-
-font-weight: 700;
+    font-weight: 700;
 }
 
+
 /* =========================================
-LOGO LOOP CONTAINER
+   LOGO LOOP
 ========================================= */
 
 .logo-loop {
+    position: relative;
 
-position: relative;
+    width: 100%;
 
-width: 100%;
+    overflow: hidden;
 
-overflow: hidden;
-
-padding: 25px 0;
+    padding: 25px 0;
 }
 
+
 /* =========================================
-FADE EDGES
+   FADE EDGES
 ========================================= */
 
 .logo-loop::before,
 .logo-loop::after {
+    content: "";
 
-content: "";
+    position: absolute;
 
-position: absolute;
+    top: 0;
+    bottom: 0;
 
-top: 0;
+    width: 12%;
 
-bottom: 0;
+    z-index: 5;
 
-width: 12%;
-
-z-index: 5;
-
-pointer-events: none;
+    pointer-events: none;
 }
 
 .logo-loop::before {
+    left: 0;
 
-left: 0;
-
-background:
-linear-gradient(
-to right,
-#ffffff,
-rgba(255, 255, 255, 0)
-);
+    background:
+        linear-gradient(
+            to right,
+            #ffffff,
+            rgba(255, 255, 255, 0)
+        );
 }
 
 .logo-loop::after {
+    right: 0;
 
-right: 0;
-
-background:
-linear-gradient(
-to left,
-#ffffff,
-rgba(255, 255, 255, 0)
-);
+    background:
+        linear-gradient(
+            to left,
+            #ffffff,
+            rgba(255, 255, 255, 0)
+        );
 }
 
+
 /* =========================================
-ANIMATED TRACK
+   ANIMATED TRACK
 ========================================= */
 
 .logo-loop-track {
+    display: flex;
 
-display: flex;
+    width: max-content;
 
-width: max-content;
+    will-change: transform;
 
-will-change: transform;
-
-user-select: none;
+    user-select: none;
 }
 
 .logo-list {
+    display: flex;
 
-display: flex;
+    align-items: center;
 
-align-items: center;
-
-flex-shrink: 0;
+    flex-shrink: 0;
 }
 
+
 /* =========================================
-LOGO ITEM
+   LOGO ITEM
 ========================================= */
 
 .logo-item {
+    flex: 0 0 auto;
 
-flex: 0 0 auto;
+    width: 150px;
+    height: 100px;
 
-width: 150px;
+    margin-right: 45px;
 
-height: 100px;
+    display: flex;
 
-margin-right: 45px;
+    flex-direction: column;
 
-display: flex;
+    align-items: center;
+    justify-content: center;
 
-flex-direction: column;
+    gap: 14px;
 
-align-items: center;
+    color: #111111;
 
-justify-content: center;
+    text-decoration: none;
 
-gap: 14px;
-
-color: #111111;
-
-text-decoration: none;
-
-transition:
-transform 0.3s
-cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.logo-item img {
-
-width: 52px;
-
-height: 52px;
-
-object-fit: contain;
-
-display: block;
-
-transition:
-transform 0.3s
-cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.logo-item span {
-
-font-size: 12px;
-
-letter-spacing: 2px;
-
-text-transform: uppercase;
-
-font-weight: 600;
-}
 
 /* =========================================
-GSAP LOGO
+   BLACK MONOCHROME LOGOS
+========================================= */
+
+.logo-item img {
+    width: 52px;
+    height: 52px;
+
+    object-fit: contain;
+
+    display: block;
+
+    /*
+       Convert every colored DevIcon
+       into pure black.
+    */
+    filter:
+        grayscale(1)
+        brightness(0);
+
+    transition:
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* =========================================
+   LOGO TEXT
+========================================= */
+
+.logo-item span {
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   GSAP LOGO
 ========================================= */
 
 .gsap-logo {
+    width: 52px;
+    height: 52px;
 
-width: 52px;
+    border-radius: 12px;
 
-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-border-radius: 12px;
+    background: #111111;
+    color: #ffffff;
 
-display: flex;
+    font-size: 10px;
 
-align-items: center;
+    font-weight: 800;
 
-justify-content: center;
+    letter-spacing: -0.5px;
 
-background: #111111;
-
-color: #ffffff;
-
-font-size: 10px;
-
-font-weight: 800;
-
-letter-spacing: -0.5px;
-
-transition:
-transform 0.3s
-cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
 /* =========================================
-GITHUB
+   GITHUB
 ========================================= */
 
 .github-logo {
-
-filter: none;
+    filter:
+        grayscale(1)
+        brightness(0);
 }
 
+
 /* =========================================
-HOVER
+   LOGO HOVER
 ========================================= */
 
 .logo-item:hover {
-
-transform: scale(1.15);
-
+    transform: scale(1.15);
 }
 
 .logo-item:hover img {
-
-transform: scale(1.05);
-
+    transform: scale(1.05);
 }
 
 .logo-item:hover .gsap-logo {
-
-transform: scale(1.05);
-
+    transform: scale(1.05);
 }
 
 .logo-item:hover span {
-
-color: #7c3aed;
-
+    color: #7c3aed;
 }
 
+
 /* =========================================
-DESCRIPTION
+   DESCRIPTION
 ========================================= */
 
 .logo-loop-description {
+    font-size: 10px;
 
-font-size: 10px;
+    letter-spacing: 4px;
 
-letter-spacing: 4px;
+    text-align: center;
 
-text-align: center;
+    opacity: 0.55;
 
-opacity: 0.55;
-
-padding: 0 20px;
+    padding: 0 20px;
 }
 
+
 /* =========================================
-MOBILE
+   MOBILE
 ========================================= */
 
 @media (max-width: 768px) {
 
-.crosshair-container {
+    .crosshair-container {
+        cursor: default;
+    }
 
-cursor: default;
+    .cursor {
+        display: none;
+    }
 
-}
+    .crosshair-content h1 {
+        letter-spacing: -3px;
+    }
 
-.cursor {
 
-display: none;
+    /* MOBILE MENU */
 
-}
+    .staggered-menu {
+        top: 15px;
+        right: 15px;
+    }
 
-.crosshair-content h1 {
+    .menu-toggle {
+        height: 44px;
 
-letter-spacing: -3px;
+        padding: 0 14px;
 
-}
+        gap: 10px;
+    }
 
-/* ===============================
-MOBILE MENU
-=============================== */
+    .menu-panel {
+        width: 100%;
 
-.staggered-menu {
+        padding: 100px 25px 30px;
+    }
 
-top: 15px;
+    .menu-header {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
 
-right: 15px;
+    .menu-links {
+        margin-top: 45px;
+    }
 
-}
+    .menu-link {
+        gap: 15px;
+        padding: 15px 0;
+    }
 
-.menu-toggle {
+    .menu-number {
+        width: 25px;
+        font-size: 9px;
+    }
 
-height: 44px;
+    .menu-label {
+        font-size: 42px;
+        letter-spacing: -2px;
+    }
 
-padding: 0 14px;
+    .menu-link::after {
+        left: 40px;
+    }
 
-gap: 10px;
+    .menu-link:hover::after {
+        width: calc(100% - 40px);
+    }
 
-}
+    .menu-footer {
+        left: 25px;
+        right: 25px;
 
-.menu-panel {
+        bottom: 25px;
 
-width: 100%;
+        font-size: 8px;
+    }
 
-padding: 100px 25px 30px;
 
-}
+    /* MOBILE LOGO LOOP */
 
-.menu-header {
+    .logo-loop-section {
+        min-height: 75vh;
 
-font-size: 8px;
+        gap: 40px;
+    }
 
-letter-spacing: 2px;
+    .logo-loop-heading h2 {
+        font-size: clamp(40px, 11vw, 70px);
 
-}
+        letter-spacing: -3px;
+    }
 
-.menu-links {
+    .logo-loop-heading p {
+        letter-spacing: 4px;
+    }
 
-margin-top: 45px;
+    .logo-item {
+        width: 120px;
+        height: 90px;
 
-}
+        margin-right: 25px;
+    }
 
-.menu-link {
+    .logo-item img {
+        width: 42px;
+        height: 42px;
+    }
 
-gap: 15px;
+    .gsap-logo {
+        width: 42px;
+        height: 42px;
+    }
 
-padding: 15px 0;
+    .logo-loop-description {
+        font-size: 8px;
 
-}
+        letter-spacing: 2px;
 
-.menu-number {
-
-width: 25px;
-
-font-size: 9px;
-
-}
-
-.menu-label {
-
-font-size: 42px;
-
-letter-spacing: -2px;
-
-}
-
-.menu-link::after {
-
-left: 40px;
-
-}
-
-.menu-link:hover::after {
-
-width: calc(100% - 40px);
-
-}
-
-.menu-footer {
-
-left: 25px;
-
-right: 25px;
-
-bottom: 25px;
-
-font-size: 8px;
-
-}
-
-/* ===============================
-LOGO LOOP
-=============================== */
-
-.logo-loop-section {
-
-min-height: 75vh;
-
-gap: 40px;
-
-}
-
-.logo-loop-heading h2 {
-
-font-size: clamp(40px, 11vw, 70px);
-
-letter-spacing: -3px;
-
-}
-
-.logo-loop-heading p {
-
-letter-spacing: 4px;
-
-}
-
-.logo-item {
-
-width: 120px;
-
-height: 90px;
-
-margin-right: 25px;
-
-}
-
-.logo-item img {
-
-width: 42px;
-
-height: 42px;
-
-}
-
-.gsap-logo {
-
-width: 42px;
-
-height: 42px;
-
-}
-
-.logo-loop-description {
-
-font-size: 8px;
-
-letter-spacing: 2px;
-
-line-height: 2;
-
-}
-
+        line-height: 2;
+    }
 }
